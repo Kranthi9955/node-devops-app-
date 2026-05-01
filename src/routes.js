@@ -14,15 +14,13 @@ router.use((req, res, next) => {
 /**
  * API Versioning
  */
-const API_PREFIX = '/api/v1';
 
 /**
  * Routes
  */
 router.get('/', controller.home);
+router.get('/health', controller.health);
+router.post('/sum', controller.sum);
 
-router.get(`${API_PREFIX}/health`, controller.health);
-
-router.post(`${API_PREFIX}/sum`, controller.sum);
 
 module.exports = router;
