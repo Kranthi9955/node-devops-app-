@@ -3,16 +3,32 @@
   "version": "1.0.0",
   "description": "Node.js app for CI/CD and Kubernetes practice",
   "main": "src/app.js",
+
   "scripts": {
     "start": "node src/app.js",
-    "dev": "node src/app.js",
-    "test": "jest"
+    "dev": "nodemon src/app.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "build": "echo \"No build step required\""
   },
+
+  "engines": {
+    "node": ">=18"
+  },
+
   "dependencies": {
     "express": "^4.18.2"
   },
+
   "devDependencies": {
     "jest": "^29.0.0",
-    "supertest": "^6.3.0"
+    "supertest": "^6.3.0",
+    "nodemon": "^3.0.0"
+  },
+
+  "jest": {
+    "testEnvironment": "node",
+    "coverageDirectory": "coverage"
   }
 }
