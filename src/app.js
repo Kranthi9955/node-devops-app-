@@ -13,7 +13,7 @@ app.use((req, res, next) => {
 });
 
 // Routes
-app.use('/api', routes);
+app.use('/api/v1', routes);
 
 // Health check (important for Docker/K8s)
 app.get('/health', (req, res) => {
