@@ -15,7 +15,7 @@ describe('App API', () => {
 
   describe('GET /health', () => {
     it('should return health status', async () => {
-      const res = await request(app).get('/health');
+      const res = await request(app).get('/api/v1/health');
 
       expect(res.statusCode).toBe(200);
       expect(res.body.status).toBe('UP');
@@ -27,7 +27,7 @@ describe('App API', () => {
 
     it('should return sum for valid input', async () => {
       const res = await request(app)
-        .post('/sum')
+        .post('/api/v1/sum')
         .send({ a: 5, b: 7 });
 
       expect(res.statusCode).toBe(200);
@@ -37,7 +37,7 @@ describe('App API', () => {
 
     it('should fail for invalid input type', async () => {
       const res = await request(app)
-        .post('/sum')
+        .post('/api/v1/sum')
         .send({ a: "5", b: 7 });
 
       expect(res.statusCode).toBe(400);
@@ -46,7 +46,7 @@ describe('App API', () => {
 
     it('should fail when inputs are missing', async () => {
       const res = await request(app)
-        .post('/sum')
+        .post('/api/v1/sum')
         .send({ a: 5 });
 
       expect(res.statusCode).toBe(400);
