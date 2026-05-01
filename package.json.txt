@@ -1,0 +1,18 @@
+{
+  "name": "node-devops-app",
+  "version": "1.0.0",
+  "description": "Node.js app for CI/CD and Kubernetes practice",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "node src/app.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0",
+    "supertest": "^6.3.0"
+  }
+}
