@@ -51,5 +51,11 @@ pipeline {
              sh "docker run -d -p 3004:3000 --name node-app $IMAGE"
     }
 }
+        stage('Deploy to EKS') {
+    steps {
+        sh 'kubectl apply -f deployment.yaml'
+        sh 'kubectl apply -f service.yaml'
+    }
+}
     }
 }
